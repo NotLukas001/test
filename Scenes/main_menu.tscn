@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://iocap8lt3mym"]
+
+[ext_resource type="Texture2D" uid="uid://v7cihyfqmse1" path="res://Blue.png" id="1_3p8jp"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_33g5d"]
+[ext_resource type="Texture2D" uid="uid://c4kvfu7w8oq2e" path="res://Scenes/cooltext454431828491502.png" id="2_jsl7e"]
+[ext_resource type="Texture2D" uid="uid://qtmfhuj65qb" path="res://Scenes/start.png" id="3_o187x"]
+[ext_resource type="Texture2D" uid="uid://1xcsndvet5yh" path="res://Scenes/hover.png" id="4_1g3x1"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_33g5d")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+light_mask = 67
+texture_filter = 1
+offset_top = -201.0
+offset_right = 2502.0
+offset_bottom = 735.0
+texture = ExtResource("1_3p8jp")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -244.0
+offset_right = 1208.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jsl7e")
+
+[node name="Play" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 908.0
+offset_top = 239.0
+offset_right = 1508.0
+offset_bottom = 779.0
+texture_normal = ExtResource("3_o187x")
+texture_pressed = ExtResource("3_o187x")
+texture_hover = ExtResource("4_1g3x1")
+texture_disabled = ExtResource("3_o187x")
+texture_focused = ExtResource("3_o187x")
+stretch_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1113, 283)
+zoom = Vector2(0.74, 0.74)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
